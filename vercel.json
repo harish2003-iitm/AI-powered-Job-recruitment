@@ -1,0 +1,29 @@
+{
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python",
+      "config": {
+        "excludeFiles": [
+          "tests/**",
+          "*.db",
+          "*.sqlite3",
+          "*.md",
+          "*.csv",
+          "*.pdf",
+          "*.txt",
+          "uploads/**",
+          "cache/**",
+          ".pytest_cache/**",
+          ".git/**",
+          ".github/**",
+          "docs/**",
+          "examples/**"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "main.py" }
+  ]
+} 
